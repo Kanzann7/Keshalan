@@ -1,0 +1,77 @@
+<!-- Utilisation du foreach pour faire apparaître tous les articles de la base de données -->
+<?php foreach ($articles as $article) : ?>
+    <article>
+        <div class="articles">
+            <div class="articles-title">
+                <h2><?= $article->getTitle(); ?></p></h2>
+            </div>
+            <div class="articles-img">
+
+                <img src="<?= asset('images/' . $article->getImage()) ?>" alt="">
+                
+            </div>
+            <div class="articles-content">
+            
+                <p> <?= $article->getContent(); ?></p>
+            </div>
+        </div>
+
+        
+    
+    
+
+        
+
+        <div class="form">
+            <form action="<?= constructUrl('/blog', ['id' => $idArticle]) ?>" method="POST">
+                <div class="form-group">
+                    <label for="nickname" class="color">Votre pseudo</label>
+                    <input type="text" name="nickname" id="nickname" >
+                    <?php if (isset($errors['nickname'])) : ?>
+                        <p><?= $errors['nickname']; ?></p>
+                    <?php endif; ?>
+                </div>
+
+
+                
+                <div class="form-group">
+                    <label for="comment" class="color">Votre commentaire</label>
+                    <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    <?php if (isset($errors['comment'])) : ?>
+                                <p><?= $errors['comment']; ?></p>
+                            <?php endif; ?>
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
+            
+            </form>
+        </div>
+
+        <?php if (empty($comments)) : ?>
+                <p class="empty-form">Soyez le premier à ajouter un commentaire !</p>
+            <?php else : ?>
+                <?php foreach ($comments as $comment) : ?>
+                    <div class="commentaires">
+                        <h3>Ajouté par <?= $comment->getNickname(); ?> le <?= $comment->getFormattedCreatedAt() ?></h3>
+                        <p><?= $comment->getContent(); ?></p>
+                    </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+
+    </article>
+<?php endforeach; ?>
+
+
+
+    <footer>
+
+        <div id="contact">
+            <a href="https://www.youtube.com/@keshalanstudio8193" target="_blank"><img src="<?= asset('images/youtube.png'); ?>" alt="logo de youtube" class="logo-footer"></a>
+            <a href="https://www.instagram.com/keshalanart/?hl=fr" target="_blank"><img src="<?= asset('images/instagram.png') ; ?>" alt="logo d'instagram" class="logo-footer"></a>
+            <a href="https://www.facebook.com/keshalanpage/" target="_blank"><img src="<?= asset('images/facebook.png') ; ?> " alt="logo de facebook" class="logo-footer"></a>
+            <a href="https://www.etsy.com/fr/shop/LaBottegaParKeshalan?ref=shop-header-name&listing_id=1329099228" target="_blank"><img src="<?= asset('images/etsy.png') ; ?>" alt="logo d'etsy" class="logo-footer"></a>
+            <a href="mailto:kevinpfister@neuf.fr" target="_blank"><img src="<?= asset('images/mail.png') ; ?>" alt="logo de mail" class="logo-footer"></a>
+
+        </div>
+
+    </footer>

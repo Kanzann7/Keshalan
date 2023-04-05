@@ -1,0 +1,237 @@
+        <div class="navbar">
+            <div class="accueil">
+                <h1>Accueil</h1>
+            </div>
+            <div class="navbar-image">
+                
+                <div class="oeuvre-nav">
+                    <h2>Biographie</h2> 
+                    <a href="#biographie"> <img src="../public/images/cadre bio.png" class="oeuvre" alt=""></a>
+                </div>
+                <div class="oeuvre-nav">
+                    <h2>Gallerie</h2>
+                    <a href="#gallery"><img src="../public/images/gallerie-cadre.png" alt="oeuvre" class="oeuvre"></a>
+                </div>
+                
+                <div class="oeuvre-nav">
+                    <h2>Blog</h2>
+                    <?php foreach ($articles as $article): ?>
+                    <a href="<?=constructUrl('/blog', ['id' => $article->getId()]);?>" target="_blank">
+                    <?php endforeach; ?> <!-- Arrêt du foreach ici pour éviter de boucler l'image de la balise img -->
+                    <img src="../public/images/blog-cadre.webp" alt="oeuvre" class="oeuvre"></a>
+                </div>
+                
+                <div class="oeuvre-nav">
+                    <h2>Contact</h2>
+                    <a href="#contact"><img src="../public/images/contact-cadre.png" alt="oeuvre" class="oeuvre"></a>
+                    
+                </div>
+            </div>
+        </div>
+
+    
+
+</header>
+
+
+<main>
+    <div id="biographie">
+        <p>J'ai laissé mon esprit vagabonder dans mon rêve d'enfant . <br> Explorer une grotte, une civilisation antique et ses ruines, cette fascination ne m'a jamais quitté depuis l'enfance. <br> <br>
+
+Le temps dégradant petit à petit ce que l'homme et la nature ont construit, j'aime me perdre dans cette immensité temporelle qui me fait me questionner sur le sens de ma vie <br>et ma place dans ce monde et cette société qui ne cesse d'évoluer, ainsi que dans son histoire. <br> Je ne vois pas le temps qui passe mais je le ressens au travers de ces éléments décomposés et décomposables qui font toute la beauté et la transcendance du monde lui même. <br> <br>
+
+Les cultures d'autrefois et les mondes anciens m'ont amené cette passion inaltérable. Je ne peux me défaire de cette fascination qui m'oriente parfois vers d'autres univers eux <br> aussi étranges et tout cela influence l'esthétique de mes œuvres, sans oublier ma pratique de l'urbex qui inspire mon regard sur notre monde et son devenir potentiel.</p>
+
+    </div>
+
+ 
+<div id="gallery">
+  <div class="child-page-listing">
+
+  <h2>Gallerie</h2>
+
+  <div class="grid-container">
+
+    <article id="3685" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre1->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+            <img width="300" height="169" src="<?= 'images/' . $oeuvre1->getImage() ?>" alt="oeuvre">    
+        </a>
+            
+      </div>
+
+    </article>
+
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre2->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre2->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre3->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre3->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre4->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre4->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre5->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre5->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre6->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre6->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre7->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre7->getImage() ?>" alt="oeuvre">    
+        </a>
+
+      </div>
+
+    </article>
+
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre8->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre8->getImage() ?>" alt="san francisco">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre9->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre9->getImage() ?>" alt="san francisco">    
+        </a>
+
+      </div>
+
+    </article>
+
+    <article id="3688" class="location-listing">
+
+      <a class="location-title" href="#">
+        <h2 ><?= $oeuvre10->getTitle(); ?></h2>
+      </a>
+
+      <div class="location-image">
+        <a href="#">
+          <img width="300" height="169" src="<?= 'images/' . $oeuvre10->getImage() ?>" alt="san francisco">    
+        </a>
+
+      </div>
+
+    </article>
+
+    
+    
+
+
+   
+  </div>
+  <!-- end grid container -->
+
+  </div>
+
+</div>
+
+
+   
+
+
+</main>
+
+
+    <footer>
+
+        <div id="contact">
+            <a href="https://www.youtube.com/@keshalanstudio8193" target="_blank"><img src="<?= asset('images/youtube.png'); ?>" alt="logo de youtube" class="logo-footer"></a>
+            <a href="https://www.instagram.com/keshalanart/?hl=fr" target="_blank"><img src="<?= asset('images/instagram.png') ; ?>" alt="logo d'instagram" class="logo-footer"></a>
+            <a href="https://www.facebook.com/keshalanpage/" target="_blank"><img src="<?= asset('images/facebook.png') ; ?> " alt="logo de facebook" class="logo-footer"></a>
+            <a href="https://www.etsy.com/fr/shop/LaBottegaParKeshalan?ref=shop-header-name&listing_id=1329099228" target="_blank"><img src="<?= asset('images/etsy.png') ; ?>" alt="logo d'etsy" class="logo-footer"></a>
+            <a href="mailto:kevinpfister@neuf.fr" target="_blank"><img src="<?= asset('images/mail.png') ; ?>" alt="logo de mail" class="logo-footer"></a>
+
+        </div>
+
+    </footer>
