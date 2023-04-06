@@ -2,7 +2,7 @@
 
 function asset(string $path)
 {
-    return BASE_URL . '/' . $path;;
+    return BASE_URL . '/' . $path;
 }
 
 
