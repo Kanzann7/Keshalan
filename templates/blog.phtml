@@ -38,12 +38,19 @@
                     <label for="comment" class="color">Votre commentaire</label>
                     <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
                     <?php if (isset($errors['comment'])) : ?>
-                                <p><?= $errors['comment']; ?></p>
-                            <?php endif; ?>
+                        <p><?= $errors['comment']; ?></p>
+                    <?php endif; ?>
                 </div>
 
                 <button type="submit" name="submit" class="btn btn-primary">Envoyer</button>
+              
             
+                <?php if (array_key_exists('flashbag', $_SESSION) && $_SESSION['flashbag']) : ?>
+                    <?php $flashMessage = $_SESSION['flashbag']; ?>
+                    <?php $_SESSION['flashbag'] = null; ?>
+                    <p><?= $flashMessage; ?></p>
+                <?php endif; ?>
+
             </form>
         </div>
 

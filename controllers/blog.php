@@ -23,7 +23,7 @@ $articles = $articleModel->getAllArticles();
 $commentModel = new CommentModel();
 if (!empty($_POST)) {
 
-    // 1. Récupération des donnnées du formulaire et sécurisation des données entrées
+    // 1. Récupération des données du formulaire et sécurisation des données entrées
     $nickname = htmlspecialchars($_POST['nickname']) ;
     $content = htmlspecialchars($_POST['comment']) ;
 
@@ -52,10 +52,6 @@ if (!empty($_POST)) {
 $comments = $commentModel->getCommentsByArticleId($idArticle);
 
 
-if (array_key_exists('flashbag', $_SESSION) && $_SESSION['flashbag']) {
-    $flashMessage = $_SESSION['flashbag'];
-    $_SESSION['flashbag'] = null;
-}
 
 
 
